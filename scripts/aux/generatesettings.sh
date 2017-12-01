@@ -1,13 +1,17 @@
+#!/usr/bin/env bash
+
+DIR=$(dirname "$(readlink -f "$0")")
+generatedsynonyms=$( bash $DIR/generatesynonyms.sh )
+
+#define the template.
+cat  << EOF
 		{
 			"analysis": {
       				"filter": {
         				"my_synonym_filter": {
           					"type": "synonym", 
           					"synonyms": [ 
-							"library,biblioteca",
-"small,tiny",
-"english,british",
-"monarch,queen"
+							$generatedsynonyms
           					]
         				}
       				},
@@ -24,7 +28,7 @@
 							,
             						"my_synonym_filter" 
 						],
-						"tokenizer": "keyword"
+						"tokenizer": "whitespace"
 					},
 					"asset_tag_name": {
 						"filter": [
@@ -48,3 +52,5 @@
 				}
 			}
 		}
+EOF
+

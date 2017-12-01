@@ -21,3 +21,6 @@ Considerations:
 *-If you remove this bundle, you need to restart the portal
 
 
+Synonyms file:
+
+Be careful with the special characters, they will have to be removed / escaped
