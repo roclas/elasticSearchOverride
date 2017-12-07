@@ -861,6 +861,8 @@
 			"title": {
 				"index": "analyzed",
 				"store": "yes",
+		                "search_analyzer" : "my_synonym_analyzer",
+		                "analyzer" : "my_synonym_analyzer",
 				"term_vector": "with_positions_offsets",
 				"type": "string"
 			},

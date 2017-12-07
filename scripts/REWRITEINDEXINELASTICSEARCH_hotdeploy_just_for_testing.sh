@@ -17,7 +17,7 @@ rm -rf $liferayhome/osgi/state/*
 #########FLUSHING THE INDEX####################################################
 curl -XDELETE "$host/$index" | json_pp 
 #curl -XPUT "$host/$index" -d @completeindex.json | json_pp
-curl -XPUT "$host/$index" -d @<( bash $DIR/aux/generatewholeindex.sh )
+curl -XPUT "$host/$index" -d @<( bash $DIR/_aux/generatewholeindex.sh )
 
 
 
